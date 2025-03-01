@@ -29,12 +29,6 @@ def main():
         print("Waiting for frida-server to initialize...")
         subprocess.Popen("adb shell 'ps -A | grep frida-server'")
 
-        time.sleep(5)
-
-        # Step 4: List processes using frida-ps
-        print("Listing processes with frida-ps...")
-        run_command("frida-ps -U")
-        run_command(["objection", "-g", "WhatsApp", "explore"])
 
     except Exception as e:
         print(f"An error occurred: {e}")
